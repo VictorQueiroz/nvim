@@ -16,7 +16,11 @@ require("mason-lspconfig").setup({
     "pyright",
     -- "gopls",
     "ts_ls",
+    "bashls",
+    "jsonls",
+    "yamlls",
   }
 })
 
 require("hardtime").setup()
+
