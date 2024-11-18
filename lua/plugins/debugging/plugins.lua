@@ -1,6 +1,7 @@
 return {
   -- Debug Adapter Protocol client implementation for Neovim
-  -- { "mfussenegger/nvim-dap" },
+
+  { "mfussenegger/nvim-dap" },
 
   -- A Debug Adapter Protocol client implementation for Neovim written in Lua.
   -- { "mxsdev/nvim-dap-vscode-js" },

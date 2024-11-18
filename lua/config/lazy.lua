@@ -27,16 +27,31 @@ require("lazy").setup({
     -- import your plugins
     { import = "plugins" },
     { import = "plugins.core" },
+    { import = "plugins.ui" },
+    { import = "plugins.notification" },
+    { import = "plugins.navigation" },
+    { import = "plugins.shell" },
+    { import = "plugins.peripheral" },
+
+    -- Spell checking
+    { import = "plugins.spellcheck" },
+
+    -- Diagnostics
+    { import = "plugins.diagnostics" },
+
+    -- Debugging
+    { import = "plugins.debugging" },
+
+    -- Style
+    { import = "plugins.style" },
+    { import = "plugins.style.plugins" },
+    { import = "plugins.style.themes" },
+
+    -- LSP
     { import = "plugins.lsp" },
     { import = "plugins.lsp.autocomplete" },
     { import = "plugins.lsp.languages.java" },
     { import = "plugins.lsp.syntax" },
-    { import = "plugins.navigation" },
-    { import = "plugins.shell" },
-    { import = "plugins.debugging" },
-    { import = "plugins.peripheral" },
-    { import = "plugins.style" },
-    { import = "plugins.style.themes" },
   },
   -- Configure any other settings here. See the documentation for more details.
   -- colorscheme that will be used when installing plugins.
@@ -46,8 +61,10 @@ require("lazy").setup({
 })
 
 require('config.lsp.setup')
-require('config.keymapping')
+require('config.explorer.setup')
+require('config.vcs.setup')
 require('config.clipboard')
 require('config.filesystem')
 require('config.style')
+require('config.keymapping')
 

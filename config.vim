@@ -33,7 +33,7 @@ set tabstop=2
 set linebreak
 set shiftwidth=2
 
-set guifont=JetBrainsMono:h20
+" set guifont=JetBrainsMono:h20
 
 " Clipboard
 set clipboard=unnamedplus,unnamed

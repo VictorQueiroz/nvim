@@ -1,0 +1,11 @@
+{
+  "languageserver": {
+    "json": {
+      "format": {
+        "enable": true
+      }
+    },
+    "typescript": {
+    }
+  }
+}
