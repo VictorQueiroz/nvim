@@ -51,6 +51,11 @@ return {
   -- LSP client manager
   {
     "williamboman/mason.nvim",
+    registries = {
+      "github:masonregistry/mason-registry",
+      "github:mason-registry/mason-registry-index",
+      "github:nvim-java/mason-registry",
+    },
     dependencies = {
       "williamboman/mason-lspconfig.nvim",
       "neovim/nvim-lspconfig",
@@ -90,6 +95,7 @@ return {
   -- Nvim Treesitter configurations and abstraction layer
   {
     "nvim-treesitter/nvim-treesitter",
+    indent = { enable = false },
     build = function()
       require("nvim-treesitter.install").update({ with_sync = true })
     end,

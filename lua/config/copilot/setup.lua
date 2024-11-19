@@ -1,0 +1,15 @@
+--local codeium = require('codeium')
+--local vim = vim
+--
+--codeium.setup({
+--  virtual_text = {
+--    enabled = true
+--  },
+--  workspace_root = {
+--    use_lsp = true,
+--    find_root = function()
+--      return vim.fn.CocAction('currentWorkspacePath')
+--    end
+--  },
+--})
+

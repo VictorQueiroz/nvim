@@ -67,4 +67,5 @@ require('config.clipboard')
 require('config.filesystem')
 require('config.style')
 require('config.keymapping')
+require('config.copilot.setup')
 

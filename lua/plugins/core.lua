@@ -46,20 +46,30 @@ return {
 --  { "nvim-treesitter/nvim-treesitter" },
 --  { "nvim-telescope/telescope-fzf-native.nvim" },
 --  { "nvim-tree/nvim-web-devicons" },
+
+  -- A native neovim extension for Codeium
   {
     "Exafunction/codeium.nvim",
     dependencies = {
         "nvim-lua/plenary.nvim",
-        "hrsh7th/nvim-cmp",
+        -- "hrsh7th/nvim-cmp",
     },
-    config = function()
-        require("codeium").setup({
-          virtual_text = {
-            enabled = true
-          }
-        })
-    end
   },
+
+--  {
+--    "Exafunction/codeium.nvim",
+--    dependencies = {
+--        "nvim-lua/plenary.nvim",
+--        "hrsh7th/nvim-cmp",
+--    },
+--    config = function()
+--        require("codeium").setup({
+--          virtual_text = {
+--            enabled = true
+--          }
+--        })
+--    end
+--  },
 
   -- Preview markdown code directly in your neovim terminal. 
   -- {"ellisonleao/glow.nvim", config = true, cmd = "Glow"}
