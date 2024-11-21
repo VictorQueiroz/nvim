@@ -17,7 +17,7 @@ set showcmd
 set showmatch
 set incsearch
 set hlsearch
-set ignorecase
+" set ignorecase
 set smartcase
 set scrolloff=5
 set sidescroll=5
@@ -28,10 +28,10 @@ set nolist
 set undofile
 set undodir=~/.config/nvim/undo
 
-set expandtab
-set tabstop=2
-set linebreak
-set shiftwidth=2
+" set expandtab
+" set tabstop=2
+" set linebreak
+" set shiftwidth=2
 
 " set guifont=JetBrainsMono:h20
 

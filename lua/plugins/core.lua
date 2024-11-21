@@ -42,19 +42,19 @@ return {
 --  { "tpope/vim-rsi" },
 
   -- Normal plugins, unlike the ones above
-  
+
 --  { "nvim-treesitter/nvim-treesitter" },
 --  { "nvim-telescope/telescope-fzf-native.nvim" },
 --  { "nvim-tree/nvim-web-devicons" },
 
   -- A native neovim extension for Codeium
-  {
-    "Exafunction/codeium.nvim",
-    dependencies = {
-        "nvim-lua/plenary.nvim",
-        -- "hrsh7th/nvim-cmp",
-    },
-  },
+--  {
+--    "Exafunction/codeium.nvim",
+--    dependencies = {
+--        "nvim-lua/plenary.nvim",
+--        -- "hrsh7th/nvim-cmp",
+--    },
+--  },
 
 --  {
 --    "Exafunction/codeium.nvim",

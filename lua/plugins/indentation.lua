@@ -1,6 +1,6 @@
 return {
   -- EditorConfig integration
-  { "gpanders/editorconfig.nvim" },
+  -- { "gpanders/editorconfig.nvim" },
 
   -- Prettier integration
   { "prettier/vim-prettier" },

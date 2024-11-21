@@ -9,7 +9,7 @@ return {
   { "dense-analysis/ale" },
 
   -- Better defaults for nvim-lsp actions.
-  { "RishabhRD/nvim-lsputils" },
+  -- { "RishabhRD/nvim-lsputils" },
 
   -- The plugin shows a lightbulb in the sign column whenever a textDocument/codeAction is available at the current cursor position.
   { "kosayoda/nvim-lightbulb" },
@@ -48,19 +48,21 @@ return {
   -- { "rest-nvim/rest.nvim" },
   -- Bookmarks with global file storage, written in Lua.
   -- { "tomasky/bookmarks.nvim" },
-  -- LSP client manager
-  {
-    "williamboman/mason.nvim",
-    registries = {
-      "github:masonregistry/mason-registry",
-      "github:mason-registry/mason-registry-index",
-      "github:nvim-java/mason-registry",
-    },
-    dependencies = {
-      "williamboman/mason-lspconfig.nvim",
-      "neovim/nvim-lspconfig",
-    },
-  },
+--  -- LSP client manager
+--  {
+--    "williamboman/mason.nvim",
+--    registries = {
+--      "github:masonregistry/mason-registry",
+--      "github:mason-registry/mason-registry-index",
+--      "github:nvim-java/mason-registry",
+--    },
+--    dependencies = {
+--      "williamboman/mason-lspconfig.nvim",
+--      "neovim/nvim-lspconfig",
+--    },
+--  },
+
+  { "neovim/nvim-lspconfig" },
 
   -- A plugin that highlights cursor words and lines.
   {

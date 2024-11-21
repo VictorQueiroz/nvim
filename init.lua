@@ -9,3 +9,6 @@ require('config.keymapping')
 
 require("hardtime").setup()
 
+-- Enable EditorConfig
+vim.g.editorconfig = true
+

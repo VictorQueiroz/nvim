@@ -4,8 +4,6 @@
       "format": {
         "enable": true
       }
-    },
-    "typescript": {
     }
   }
 }

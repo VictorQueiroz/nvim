@@ -52,6 +52,9 @@ require("lazy").setup({
     { import = "plugins.lsp.autocomplete" },
     { import = "plugins.lsp.languages.java" },
     { import = "plugins.lsp.syntax" },
+    
+    -- Selection
+    { import = "plugins.selection" },
   },
   -- Configure any other settings here. See the documentation for more details.
   -- colorscheme that will be used when installing plugins.

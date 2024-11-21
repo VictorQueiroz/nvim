@@ -281,4 +281,7 @@ return {
 
   -- 🦊A highly customizable theme for vim and neovim with support for lsp, treesitter and a variety of plugins.
   { "EdenEast/nightfox.nvim" },
+
+	-- Jetbrains Darcula Dark for Neovim.
+	{ "xiantang/darcula-dark.nvim" },
 }

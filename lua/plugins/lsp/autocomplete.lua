@@ -5,7 +5,6 @@ return {
   -- Nodejs extension host for vim & neovim, load extensions like VSCode and host language servers.
   {
     "neoclide/coc.nvim",
-
     -- When the plugin is installed, run `npm ci` shell command inside the plugins folder
     -- in order to build the plugin. Otherwise, it won't work
     run = "npm ci",
