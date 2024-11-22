@@ -28,9 +28,11 @@ set nolist
 set undofile
 set undodir=~/.config/nvim/undo
 
+" Make sure only whole words are wrapped so it is easier to read text.
+set linebreak
+
 " set expandtab
 " set tabstop=2
-" set linebreak
 " set shiftwidth=2
 
 " set guifont=JetBrainsMono:h20
