@@ -52,17 +52,26 @@ return {
 --  },
 
   -- "On this day" style calendar, which provides information about worldwide history of working class movements and liberation struggles.
-    { "aPeoplesCalendar/apc.nvim" },
+    {
+			"aPeoplesCalendar/apc.nvim",
+			dependencies = {
+				"rcarriga/nvim-notify",
+			},
+			event = "VeryLazy",
+			config = function ()
+					require("apeoplescalendar").setup() -- configuration options are described below
+			end,
+		},
 
     -- Neovim plugin that shows a popup with possible keybindings of the command you started typing. 
-    {
-      "folke/which-key.nvim",
-      config = function()
-        require("which-key").setup {
-          -- your configuration comes here
-          -- or leave it empty to use the default settings
-          -- refer to the configuration section below
-        }
-      end
-    },
+--    {
+--      "folke/which-key.nvim",
+--      config = function()
+--        require("which-key").setup {
+--          -- your configuration comes here
+--          -- or leave it empty to use the default settings
+--          -- refer to the configuration section below
+--        }
+--      end
+--    },
 }
