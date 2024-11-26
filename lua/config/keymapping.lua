@@ -99,7 +99,20 @@
 -- 	expr = true,
 -- 	desc = "Accept LSP Completion"
 -- })
-	
+
+local builtin = require('telescope.builtin')
+
+-- Change mapleader to whitespace
+vim.g.mapleader = " "
+
+-- Disable default Codeium bindings
+vim.g.codeium_disable_bindings = 1
+
+-- Telescope Keybindings
+vim.keymap.set("n", "<C-p>", builtin.find_files, { desc = "Telescope Find Files" })
+vim.keymap.set("n", "<leader>fg", builtin.live_grep, { desc = "Live Grep" })
+
+-- Autocomplete with <Tab>
 vim.keymap.set('i', '<Tab>', function()
     -- Handle Tab behavior for both Codeium and coc.nvim
     if vim.fn['coc#pum#visible']() == 1 then
