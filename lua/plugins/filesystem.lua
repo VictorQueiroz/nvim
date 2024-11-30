@@ -1,6 +1,7 @@
 return {
-  { "nvim-tree/nvim-tree.lua", opts = { disable_netrw = true } },
-
+	{
+		"nvim-tree/nvim-tree.lua"
+	},
   {
     'nvim-telescope/telescope.nvim',
     tag = '0.1.8',

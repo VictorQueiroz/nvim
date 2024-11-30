@@ -16,3 +16,4 @@
 
 require("telescope").load_extension("notify")
 
+require('config.nvim-tree')

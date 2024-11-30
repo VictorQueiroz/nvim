@@ -1,4 +1,4 @@
--- Bootstrap lazy.nvim
+-- Bootstrap lazy.nvim; fetch it from GitHub if it doesn't exist
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
   local lazyrepo = "https://github.com/folke/lazy.nvim.git"
@@ -15,11 +15,8 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
--- Make sure to setup `mapleader` and `maplocalleader` before
--- loading lazy.nvim so that mappings are correct.
--- This is also a good place to setup other settings (vim.opt)
-vim.g.mapleader = " "
-vim.g.maplocalleader = "\\"
+-- Load general configuration before loading lazy
+require('config.general')
 
 -- Setup lazy.nvim
 require("lazy").setup({
@@ -52,23 +49,13 @@ require("lazy").setup({
     { import = "plugins.lsp.autocomplete" },
     { import = "plugins.lsp.languages.java" },
     { import = "plugins.lsp.syntax" },
-    
+
     -- Selection
     { import = "plugins.selection" },
   },
-  -- Configure any other settings here. See the documentation for more details.
-  -- colorscheme that will be used when installing plugins.
-  -- install = { colorscheme = { "nightfox" } },
-  -- automatically check for plugin updates
+
+  -- Automatically check for plugin updates
   checker = { enabled = true },
 })
 
-require('config.lsp.setup')
-require('config.explorer.setup')
-require('config.vcs.setup')
-require('config.clipboard')
-require('config.filesystem')
-require('config.style')
-require('config.keymapping')
-require('config.copilot.setup')
-
+require('config.all')
