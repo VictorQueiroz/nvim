@@ -11,8 +11,9 @@ require("hardtime").setup()
 vim.g.editorconfig = true
 
 -- Font family
-vim.o.guifont = "Noto Sans Mono:h12:#e-subpixelantialias"
+-- vim.o.guifont = "Noto Sans Mono:h12:#e-subpixelantialias"
 -- vim.o.guifont = "Menlo:h12:i:#e-subpixelantialias:#h-none"
+vim.o.guifont = "Menlo:h12:#e-subpixelantialias:#h-slight"
 
 -- Line spacing
 vim.o.linespace = 1
