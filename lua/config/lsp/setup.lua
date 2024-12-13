@@ -10,55 +10,13 @@ local cmp = require("cmp")
 cmp.setup({
 	-- Start mapping from scratch
 	mapping = cmp.mapping.preset.insert({
-		['<C-e>'] = function(fallback)
-      if not cmp.select_next_item() then
-        if vim.bo.buftype ~= 'prompt' and has_words_before() then
-          cmp.complete()
-        else
-          fallback()
-        end
-      end
-    end,
-
-    ['<S-e>'] = function(fallback)
-      if not cmp.select_prev_item() then
-        if vim.bo.buftype ~= 'prompt' and has_words_before() then
-          cmp.complete()
-        else
-          fallback()
-        end
-      end
-    end,
-
+		['<S-Tab>'] = cmp.mapping(cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Select }), {'i'}),
 		['<C-Space>'] = cmp.mapping.confirm {
 		  behavior = cmp.ConfirmBehavior.Insert,
 		  select = true,
 		},
   }),
-	-- Disable mapping
-	-- mapping = {
-	-- 	["<Tab>"] = cmp.config.disable,
-	-- 	["<S-Tab>"] = cmp.config.disable
-	-- 	-- ['<Tab>'] = cmp.mapping(function(fallback)
-	-- 	--   -- Give priority to `nvim-cmp`
-	-- 	--   if cmp.visible() then
-	-- 	--   	print("CMP is visible")
-	-- 	--     return cmp.confirm({ select = true })
-	-- 	--   elseif vim.fn['codeium#Accept'] ~= nil then
-	-- 	--     return vim.fn['codeium#Accept']()
-	-- 	--   else
-	-- 	--     return fallback()
-	-- 	--   end
-	-- 	-- end),
-	-- 	-- ['<S-Tab>'] = cmp.mapping(function(fallback)
-	-- 	--   if cmp.visible() then
-	-- 	--     cmp.select_prev_item()
-	-- 	--     return ''
-	-- 	--   end
 
-	--   --   return fallback()
-	-- 	-- end)
-	-- },
 	sources = cmp.config.sources({
 		{ name = 'nvim_lsp' },
 		{ name = 'buffer' },
