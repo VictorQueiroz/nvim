@@ -1,6 +1,29 @@
 return {
+  -- LSP client manager
+  {
+    "williamboman/mason.nvim",
+    dependencies = {
+      "williamboman/mason-lspconfig.nvim",
+      "neovim/nvim-lspconfig",
+    },
+  },
+
+  -- Code completion
+  {
+    'hrsh7th/nvim-cmp',
+    dependencies = {
+      'hrsh7th/cmp-nvim-lsp',       -- LSP source
+      'hrsh7th/cmp-buffer',         -- Buffer source
+      'hrsh7th/cmp-path',           -- Path source
+      'saadparwaiz1/cmp_luasnip',   -- Snippet source
+			'ogaken-1/cmp-tsnip',					-- A completion source of tsnip.nvim for nvim-cmp.
+			'f3fora/cmp-spell', -- spell source for nvim-cmp based on vim's spellsuggest.
+      'L3MON4D3/LuaSnip',           -- Snippet engine
+    },
+  },
+
   -- 💻 Neovim setup for init.lua and plugin development with full signature help, docs and completion for the nvim lua API.
-  { "folke/neodev.nvim" },
+	-- { "folke/neodev.nvim" },
 
   -- null-ls.nvim reloaded / Use Neovim as a language server to inject LSP diagnostics, code actions, and more via Lua.
   { "nvimtools/none-ls.nvim" },
@@ -48,30 +71,15 @@ return {
   -- { "rest-nvim/rest.nvim" },
   -- Bookmarks with global file storage, written in Lua.
   -- { "tomasky/bookmarks.nvim" },
---  -- LSP client manager
---  {
---    "williamboman/mason.nvim",
---    registries = {
---      "github:masonregistry/mason-registry",
---      "github:mason-registry/mason-registry-index",
---      "github:nvim-java/mason-registry",
---    },
---    dependencies = {
---      "williamboman/mason-lspconfig.nvim",
---      "neovim/nvim-lspconfig",
---    },
---  },
-
-  { "neovim/nvim-lspconfig" },
 
   -- A plugin that highlights cursor words and lines.
-  {
-    "yamatsum/nvim-cursorline",
-    dependencies = {
-      -- Part of nvim-cursorline. Highlight the word under the cursor.
-      { "xiyaowong/nvim-cursorword" },
-    },
-  },
+--   {
+--     "yamatsum/nvim-cursorline",
+--     dependencies = {
+--       -- Part of nvim-cursorline. Highlight the word under the cursor.
+--       { "xiyaowong/nvim-cursorword" },
+--     },
+--   },
 
   -- Null-ls.nvim reloaded / Use Neovim as a language server to inject LSP diagnostics, code actions, and more via Lua.
   { "nvimtools/none-ls.nvim" },
@@ -81,18 +89,6 @@ return {
 
   -- Resolve imports
   { "stevanmilic/nvim-lspimport" },
-
-  -- Code completion
---  {
---    'hrsh7th/nvim-cmp',
---    dependencies = {
---      'hrsh7th/cmp-nvim-lsp',       -- LSP source
---      'hrsh7th/cmp-buffer',         -- Buffer source
---      'hrsh7th/cmp-path',           -- Path source
---      'saadparwaiz1/cmp_luasnip',   -- Snippet source
---      'L3MON4D3/LuaSnip',           -- Snippet engine
---    },
---  },
 
   -- Nvim Treesitter configurations and abstraction layer
   {

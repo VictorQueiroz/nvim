@@ -1,6 +1,6 @@
 -- Load previous Neovim configuration
 vim.cmd('source ~/.config/nvim/config.vim')
-
+-- vim.
 -- Load plugin manager configuration
 require("config.lazy")
 

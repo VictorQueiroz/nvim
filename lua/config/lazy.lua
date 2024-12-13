@@ -47,6 +47,7 @@ require("lazy").setup({
     -- LSP
     { import = "plugins.lsp" },
     { import = "plugins.lsp.autocomplete" },
+    { import = "plugins.lsp.plugins" },
     { import = "plugins.lsp.languages.java" },
     { import = "plugins.lsp.syntax" },
 

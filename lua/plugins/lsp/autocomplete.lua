@@ -2,18 +2,6 @@ return {
   -- The largest collection of independent JSON schemas in the world.
   { "b0o/SchemaStore.nvim" },
 
-  -- Nodejs extension host for vim & neovim, load extensions like VSCode and host language servers.
-  {
-    "neoclide/coc.nvim",
-		branch = 'release',
-    -- ... your other coc.nvim config ...
-    init = function()
-    end,
-    -- -- build = ":CocUpdate",
-    -- Uncomment next line if you want to follow only stable versions
-    -- version = "*"
-  },
-
   -- A better annotation generator. Supports multiple languages and annotation conventions.
   { 
     "danymat/neogen", 
@@ -21,13 +9,4 @@ return {
     -- Uncomment next line if you want to follow only stable versions
     -- version = "*" 
   },
-
-  -- Completor is an asynchronous code completion framework for vim8.
-  -- New features of vim8 are used to implement the fast completion engine with low overhead.
-  -- For using semantic completion, external completion tools should be installed.
-  -- { "maralla/completor.vim" },
-
-  -- Code analysis & navigation plugin for Neovim. Navigate codes like a breeze🎐 Exploring LSP and 🌲Treesitter symbols a piece of 🍰 Take control like a boss 🦍
-  -- { "ray-x/navigator.lua" },  
-  -- { "liuchengxu/vista.vim" },
 }

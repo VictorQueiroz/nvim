@@ -2,8 +2,8 @@
 -- vim.cmd('colorscheme catppuccin-mocha')
 -- vim.cmd('colorscheme xresources')
 -- vim.cmd('colorscheme catppuccin-latte')
-vim.cmd('colorscheme catppuccin-frappe')
+-- vim.cmd('colorscheme catppuccin-frappe')
 -- vim.cmd('colorscheme catppuccin-macchiato')
--- vim.cmd('colorscheme vscode')
+vim.cmd('colorscheme vscode')
 
 -- Set Darcula as the default theme	
