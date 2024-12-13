@@ -7,6 +7,25 @@ vim.keymap.set("n", "<leader>tt", ":NvimTreeToggle<CR>", { desc = "Toggle NvimTr
 vim.keymap.set("n", "<C-p>", builtin.find_files, { desc = "Telescope Find Files" })
 vim.keymap.set("n", "<leader>fg", builtin.live_grep, { desc = "Live Grep" })
 
+-- Alt + [ and Alt + ] should cycle through Codeium suggestions
+vim.keymap.set("i", "<A-[>", function()
+	vim.fn['codeium#CycleCompletions'](-1)
+end, { expr = true, noremap = true, silent = true })
+vim.keymap.set("i", "<A-]>", function()
+	vim.fn['codeium#CycleCompletions'](1)
+end, { expr = true, noremap = true, silent = true })
+
+-- Alt + c should toggle between Codeium completions and coc completion
+-- Missing
+
+-- Alt + \ should trigger Codeium completion and close coc nvim popup
+vim.keymap.set("i", "<A-\\>", function()
+	-- Print that we triggered Codeium
+	return vim.fn['codeium#Accept']()
+end, { expr = true, noremap = true, silent = true })
+
+
+
 -- Autocomplete with <Tab>
 vim.keymap.set('i', '<Tab>', function()
     -- Handle Tab behavior for both Codeium and coc.nvim
