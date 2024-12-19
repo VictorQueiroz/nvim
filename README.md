@@ -1,5 +1,9 @@
 # My personal NeoVim configuration
 
+## Plugin configuration
+
+Plugin configuration can be found [here](lua/config/plugins).
+
 ## To-Do
 
 - [ ] Consider switching from `coc.nvim`.
@@ -18,7 +22,7 @@ return {
 };
 ```
 
-*Configure**
+\*Configure\*\*
 
 ```lua
 require('mason-lspconfig').setup {
@@ -39,7 +43,7 @@ require('mason-lspconfig').setup {
 			"glint",
 			"eslint",
 			"denols",
-			
+
 			-- Gradle
 			"gradle_ls",
 			"groovy",
@@ -105,7 +109,7 @@ require('mason-lspconfig').setup {
 			"dockerls",
 
 			"lua_ls"
-			"clangd",	
+			"clangd",
 			"pkgbuild_language_server",
 			"bashls",
 			"cmake",
@@ -146,7 +150,6 @@ require('mason-lspconfig').setup {
 ```
 
 neovim/nvim-lspconfig
-
 
 ## Enable/disable `hardtime.nvim`
 
