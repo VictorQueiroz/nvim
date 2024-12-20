@@ -1,15 +1,15 @@
 local lspconfig = require('lspconfig')
 
 lspconfig.bashls.setup {
-  cmd = { "bash-language-server", "start" },
-  filetypes = { "sh", "bash" },
-  root_dir = lspconfig.util.find_git_ancestor or vim.loop.os_homedir,
-  settings = {
-    bashIde = {
-      enable = true,
-      globPattern = "**/*@(.sh|.inc|.bash|.command)"
-    },
-  },
+	cmd = { "bash-language-server", "start" },
+	filetypes = { "sh", "bash" },
+	root_dir = lspconfig.util.find_git_ancestor or vim.loop.os_homedir,
+	-- settings = {
+	-- 	bashIde = {
+	-- 		enable = true,
+	-- 		globPattern = "**/*@(.sh|.inc|.bash|.command)"
+	-- 	},
+	-- },
 --  on_attach = function(client, bufnr)
 --    -- Set up buffer-local keybindings for LSP-related actions
 --    local opts = { noremap=true, silent=true }

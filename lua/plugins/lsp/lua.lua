@@ -1,10 +1,4 @@
 return {
-  {
-    "L3MON4D3/LuaSnip",
-    -- Run `install_jsregexp` after installing
-    build = "make install_jsregexp",
---    dependencies = {
---      "rafamadriz/friendly-snippets",
---    },
-  },
+	-- nvim-cmp source for nvim lua
+  {"hrsh7th/cmp-nvim-lua"}
 }

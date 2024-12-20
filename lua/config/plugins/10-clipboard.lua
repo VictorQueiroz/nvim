@@ -1,5 +1,5 @@
 require('neoclip').setup({
-  history = 1000000,
+  history = 1000,
   enable_persistent_history = false,
   length_limit = 1048576,
   continuous_sync = false,
@@ -51,6 +51,12 @@ require('neoclip').setup({
         edit = 'e',
         custom = {},
       },
+    },
+    fzf = {
+      select = 'default',
+      paste = 'ctrl-p',
+      paste_behind = 'ctrl-k',
+      custom = {},
     },
   },
 })
