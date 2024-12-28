@@ -4,13 +4,16 @@ return {
 		"wfxr/minimap.vim",
 	  deps = { "wfxr/code-minimap" }
 	},
+
 	-- 📠 Pretty and fast csv viewer for cli with cjk/emoji support.
 	{ "wfxr/csview" },
+
 	-- A task runner and job management plugin for Neovim
 	{
 		"stevearc/overseer.nvim",
 		opts = {},
 	},
+
 	-- lazydev.nvim is a plugin that properly configures LuaLS for editing your Neovim config by lazily updating your workspace libraries.
 	{
     "folke/lazydev.nvim",

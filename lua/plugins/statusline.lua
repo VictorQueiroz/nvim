@@ -1,4 +1,5 @@
 return {
-  -- A blazing fast and easy to configure neovim statusline plugin written in pure lua.
-  { "nvim-lualine/lualine.nvim" },
+	-- A blazing fast and easy to configure neovim statusline plugin written in pure lua.
+	-- { "nvim-lualine/lualine.nvim" },
+	{ "ojroques/nvim-hardline" },
 }

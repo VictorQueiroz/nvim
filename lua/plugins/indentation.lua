@@ -1,13 +1,13 @@
 return {
-  -- EditorConfig integration
-  -- { "gpanders/editorconfig.nvim" },
+	-- EditorConfig integration
+	{ "gpanders/editorconfig.nvim" },
 
-  -- Prettier integration
-  { "prettier/vim-prettier" },
+	-- Prettier integration
+	-- { "prettier/vim-prettier" },
 
-  -- Indent guides for Neovim
-  -- { "lukas-reineke/indent-blankline.nvim" },
+	-- Indent guides for Neovim
+	-- { "lukas-reineke/indent-blankline.nvim" },
 
-  -- 🧠 💪 // Smart and powerful comment plugin for neovim. Supports treesitter, dot repeat, left-right/up-down motions, hooks, and more.
-  { "numToStr/Comment.nvim" },
+	-- 🧠 💪 // Smart and powerful comment plugin for neovim. Supports treesitter, dot repeat, left-right/up-down motions, hooks, and more.
+	{ "numToStr/Comment.nvim" },
 }
