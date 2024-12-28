@@ -1,10 +1,22 @@
 return {
-  -- A Neovim plugin to display the indent lines
-  -- { "lukas-reineke/indent-blankline.nvim" },
+	-- {
+	-- 	"f-person/auto-dark-mode.nvim",
+	-- 	opts = {
+	--     update_interval = 1000,
+	--     set_dark_mode = function()
+	--       vim.api.nvim_set_option_value("background", "dark", {})
+	--       vim.cmd("colorscheme gruvbox")
+	--     end,
+	--     set_light_mode = function()
+	--       vim.api.nvim_set_option_value("background", "light", {})
+	--       vim.cmd("colorscheme gruvbox")
+	--     end,
+	--   },	
+	-- },
 
-  -- Fancy and Blazing Fast start screen plugin of neovim
-  -- { "nvimdev/dashboard-nvim" },
-
-  -- A colorscheme picker with live preview and persistence for neovim ✨
-  { "zaldih/themery.nvim" },
+	{
+		'zaldih/themery.nvim',
+		lazy = false,
+		livePreview = true,
+	}
 }
