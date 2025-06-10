@@ -1,5 +1,7 @@
 return {
-  { "acksld/nvim-neoclip.lua" },
+	{
+		"acksld/nvim-neoclip.lua",
+	},
 
-  -- { "gbprod/yanky.nvim" },
+	-- { "gbprod/yanky.nvim" },
 }
