@@ -20,35 +20,35 @@ return {
 	},
 
 	-- Code completion
-	-- {
-	-- 	'hrsh7th/nvim-cmp',
-	-- 	dependencies = {
-	-- 		'hrsh7th/cmp-nvim-lua',
+	{
+		'hrsh7th/nvim-cmp',
+		dependencies = {
+			'hrsh7th/cmp-nvim-lua',
 
-	-- 		-- Git source for nvim-cmp
-	-- 		"petertriho/cmp-git",
+			-- Git source for nvim-cmp
+			"petertriho/cmp-git",
 
-	-- 		-- LSP source
-	-- 		'hrsh7th/cmp-nvim-lsp',
+			-- LSP source
+			'hrsh7th/cmp-nvim-lsp',
 
-	-- 		-- Buffer source
-	-- 		'hrsh7th/cmp-buffer',
+			-- Buffer source
+			-- 'hrsh7th/cmp-buffer',
 
-	-- 		-- Path source
-	-- 		-- 'hrsh7th/cmp-path',
+			-- Path source
+			-- 'hrsh7th/cmp-path',
 
-	-- 		-- nvim-cmp source for filesystem paths with async processing (neovim won't block while reading from disk).
-	-- 		"FelipeLema/cmp-async-path",
+			-- nvim-cmp source for filesystem paths with async processing (neovim won't block while reading from disk).
+			"FelipeLema/cmp-async-path",
 
-	-- 		-- spell source for nvim-cmp based on vim's spellsuggest.
-	-- 		'f3fora/cmp-spell',
-	-- 	},
-	-- },
+			-- spell source for nvim-cmp based on vim's spellsuggest.
+			'f3fora/cmp-spell',
+		},
+	},
 
 	{
 		"neovim/nvim-lspconfig",
 
-		dependencies = { 'saghen/blink.cmp' },
+		dependencies = { 'hrsh7th/nvim-cmp', 'saghen/blink.cmp' },
 
 	  -- example using `opts` for defining servers
 	  opts = {
@@ -67,51 +67,52 @@ return {
 	  end
 	},
 
-	-- blink.cmp is a completion plugin with support for LSPs and external sources that updates on every keystroke with minimal overhead (0.5-4ms async). It use a custom SIMD fuzzy searcher to easily handle >20k items. It provides extensibility via hooks into the trigger, sources and rendering pipeline. Plenty of work has been put into making each stage of the pipeline as intelligent as possible, such as frecency and proximity bonus on fuzzy matching, and this work is on-going.
-	{
-	  'saghen/blink.cmp',
-	  -- optional: provides snippets for the snippet source
-	  -- dependencies = 'rafamadriz/friendly-snippets',
+	-- -- blink.cmp is a completion plugin with support for LSPs and external sources that updates on every keystroke with minimal overhead (0.5-4ms async). It use a custom SIMD fuzzy searcher to easily handle >20k items. It provides extensibility via hooks into the trigger, sources and rendering pipeline. Plenty of work has been put into making each stage of the pipeline as intelligent as possible, such as frecency and proximity bonus on fuzzy matching, and this work is on-going.
+	-- {
+	--   'saghen/blink.cmp',
+	--   -- optional: provides snippets for the snippet source
+	--   -- dependencies = 'rafamadriz/friendly-snippets',
 
-	  -- use a release tag to download pre-built binaries
-	  version = '*',
-	  -- AND/OR build from source, requires nightly: https://rust-lang.github.io/rustup/concepts/channels.html#working-with-nightly-rust
-	  -- build = 'cargo build --release',
-	  -- If you use nix, you can build from source using latest nightly rust with:
-	  -- build = 'nix run .#build-plugin',
+	--   -- use a release tag to download pre-built binaries
+	--   version = '*',
+	--   -- AND/OR build from source, requires nightly: https://rust-lang.github.io/rustup/concepts/channels.html#working-with-nightly-rust
+	--   -- build = 'cargo build --release',
+	--   -- If you use nix, you can build from source using latest nightly rust with:
+	--   -- build = 'nix run .#build-plugin',
 
-	  ---@module 'blink.cmp'
-	  ---@type blink.cmp.Config
-	  opts = {
-	    -- 'default' for mappings similar to built-in completion
-	    -- 'super-tab' for mappings similar to vscode (tab to accept, arrow keys to navigate)
-	    -- 'enter' for mappings similar to 'super-tab' but with 'enter' to accept
-	    -- See the full "keymap" documentation for information on defining your own keymap.
-	    keymap = {
-	    	preset = 'none',
-	    	['<S-Tab>'] = { 'select_next', 'fallback' },
-	    	['<C-Space>'] = { 'accept', 'fallback' },
-	    	['<C-j>'] = { 'show_documentation', 'fallback' },
-	    },
+	--   ---@module 'blink.cmp'
+	--   ---@type blink.cmp.Config
+	--   opts = {
+	--     -- 'default' for mappings similar to built-in completion
+	--     -- 'super-tab' for mappings similar to vscode (tab to accept, arrow keys to navigate)
+	--     -- 'enter' for mappings similar to 'super-tab' but with 'enter' to accept
+	--     -- See the full "keymap" documentation for information on defining your own keymap.
+	--     keymap = {
+	--     	preset = 'none',
+	--     	-- ['<S-Tab>'] = { 'select_next', 'fallback' },
+	--     	-- ['<C-Space>'] = { 'accept', 'fallback' },
+	--     	-- ['<C-j>'] = { 'show_documentation', 'fallback' },
+	--     },
 
-	    appearance = {
-	      -- Sets the fallback highlight groups to nvim-cmp's highlight groups
-	      -- Useful for when your theme doesn't support blink.cmp
-	      -- Will be removed in a future release
-	      use_nvim_cmp_as_default = true,
-	      -- Set to 'mono' for 'Nerd Font Mono' or 'normal' for 'Nerd Font'
-	      -- Adjusts spacing to ensure icons are aligned
-	      nerd_font_variant = 'mono'
-	    },
+	--     appearance = {
+	--       -- Sets the fallback highlight groups to nvim-cmp's highlight groups
+	--       -- Useful for when your theme doesn't support blink.cmp
+	--       -- Will be removed in a future release
+	--       use_nvim_cmp_as_default = true,
+	--       -- Set to 'mono' for 'Nerd Font Mono' or 'normal' for 'Nerd Font'
+	--       -- Adjusts spacing to ensure icons are aligned
+	--       nerd_font_variant = 'mono'
+	--     },
 
-	    -- Default list of enabled providers defined so that you can extend it
-	    -- elsewhere in your config, without redefining it, due to `opts_extend`
-	    sources = {
-	      default = { 'lsp', 'path', 'snippets', 'buffer' },
-	    },
-	  },
-	  opts_extend = { "sources.default" }
-	},	
+	--     -- Default list of enabled providers defined so that you can extend it
+	--     -- elsewhere in your config, without redefining it, due to `opts_extend`
+	--     sources = {
+	--       default = { 'lsp', 'path', 'snippets', 'buffer' },
+	--     },
+	--   },
+	--   opts_extend = { "sources.default" }
+	-- },	
+
   -- {
   -- 	"saghen/blink.cmp",
   --   opts = {

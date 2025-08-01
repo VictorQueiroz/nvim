@@ -37,5 +37,8 @@ set tabstop=2
 set shiftwidth=2
 
 " Clipboard
-set clipboard=unnamedplus,unnamed
+" set clipboard+=unnamedplus,unnamed
+set clipboard=unnamedplus
+
+" let g:clipboard = v:false
 

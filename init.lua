@@ -1,3 +1,2 @@
 -- Load Lazy plugin manager
-require('config.lazy')
-
+require("config.lazy")
