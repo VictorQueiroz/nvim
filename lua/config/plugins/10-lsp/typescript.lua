@@ -1,9 +1,5 @@
--- Setup lspconfig
-local lspconfig = require('lspconfig')
-local util = require('lspconfig.util')
-
-require('lspconfig').ts_ls.setup({
-	init_options = { hostInfo = 'neovim' },
+-- Setup TypeScript LSP with vim.lsp.config
+vim.lsp.config.ts_ls = {
 	cmd = { 'typescript-language-server', '--stdio' },
 	filetypes = {
 		'javascript',
@@ -13,6 +9,10 @@ require('lspconfig').ts_ls.setup({
 		'typescriptreact',
 		'typescript.tsx',
 	},
-	root_dir = util.root_pattern('tsconfig.json', 'jsconfig.json', 'package.json', '.git'),
-	single_file_support = true,
-})
+	root_markers = { 'tsconfig.json', 'jsconfig.json', 'package.json', '.git' },
+	settings = {
+		init_options = { hostInfo = 'neovim' },
+	},
+}
+
+vim.lsp.enable('ts_ls')

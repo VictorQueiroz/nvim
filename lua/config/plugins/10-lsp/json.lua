@@ -1,5 +1,5 @@
 return function()
-  require('lspconfig').jsonls.setup({
+  vim.lsp.config.jsonls = {
     cmd = { 'vscode-json-language-server', '--stdio' },
     filetypes = { 'json', 'jsonc' },
     init_options = {
@@ -11,5 +11,7 @@ return function()
         validate = { enable = true },
       },
     },
-  })
+  }
+  
+  vim.lsp.enable('jsonls')
 end
