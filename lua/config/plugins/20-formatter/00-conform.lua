@@ -1,49 +1,42 @@
 local conform = require("conform")
 
 conform.setup({
-	formatters_by_ft = {
-	  lua = { "stylua" },
-	  python = { "autopep8" },
-	  cpp = { "clang_format" },
-	  c = { "clang_format" },
-	  go = { "gofumpt" },
-	  cs = { "csharpier" },
-	  yaml = { "yamlfmt" },
-	  css = { "prettier" },
-	  flow = { "prettier" },
-	  graphql = { "prettier" },
-	  html = { "prettier" },
-	  json = { "prettier" },
-	  javascriptreact = { "prettier" },
-	  javascript = { "prettier" },
-	  less = { "prettier" },
-	  markdown = { "prettier" },
-	  scss = { "prettier" },
-	  typescript = { "prettier" },
-	  typescriptreact = { "prettier" },
-	  vue = { "prettier" },	
-		-- lua = { "stylua" },
-		-- -- Conform will run multiple formatters sequentially
-		-- python = { "isort", "black" },
-		-- -- You can customize some of the format options for the filetype (:help conform.format)
-		-- rust = { "rustfmt", lsp_format = "fallback" },
-		-- -- Conform will run the first available formatter
-		-- javascript = { "prettierd", "prettier" },
-		-- typescript = { "prettierd", "prettier" },
-		-- typescriptreact = { "prettierd", "prettier" },
-	},
-	-- Add keymap for formatting when <leader>p is pressed
-	format_on_save = {
-		lsp_fallback = true,
-		async = false,
-		timeout_ms = 500,
-	},
+  formatters_by_ft = {
+    lua = { "stylua" },
+    python = { "autopep8" },
+    cpp = { "clang_format" },
+    c = { "clang_format" },
+    go = { "gofumpt" },
+    cs = { "csharpier" },
+    yaml = { "yamlfmt" },
+    -- Prefer prettierd (a persistent daemon) and fall back to prettier: on a
+    -- format-on-save path, prettier's Node startup dominates the 500ms budget.
+    css = { "prettierd", "prettier" },
+    graphql = { "prettierd", "prettier" },
+    html = { "prettierd", "prettier" },
+    json = { "prettierd", "prettier" },
+    jsonc = { "prettierd", "prettier" },
+    javascript = { "prettierd", "prettier" },
+    javascriptreact = { "prettierd", "prettier" },
+    less = { "prettierd", "prettier" },
+    markdown = { "prettierd", "prettier" },
+    scss = { "prettierd", "prettier" },
+    typescript = { "prettierd", "prettier" },
+    typescriptreact = { "prettierd", "prettier" },
+    vue = { "prettierd", "prettier" },
+  },
+
+  -- `lsp_fallback` is the deprecated spelling; conform now wants
+  -- `lsp_format = "fallback"`.
+  format_on_save = {
+    lsp_format = "fallback",
+    timeout_ms = 500,
+  },
 })
 
 vim.keymap.set("n", "<leader>p", function()
-	conform.format({
-		lsp_fallback = true,
-		async = true,
-		timeout_ms = 500,
-	})
-end, { expr = false, desc = "Conform: Format" })
+  conform.format({
+    lsp_format = "fallback",
+    async = true,
+  })
+end, { desc = "Conform: Format" })

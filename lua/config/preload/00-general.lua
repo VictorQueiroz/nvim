@@ -1,28 +1,22 @@
--- Load previous Neovim configuration
-vim.cmd('source ~/.config/nvim/config.vim')
+-- Options that must be set before lazy.nvim and any plugin loads.
 
--- Font family
--- vim.o.guifont = "Noto Sans Mono:h12:#e-subpixelantialias"
--- vim.o.guifont = "Menlo:h12:i:#e-subpixelantialias:#h-none"
-vim.o.guifont = "Menlo:h12:#e-subpixelantialias:#h-slight"
-
--- Line spacing
-vim.o.linespace = 1
-
--- filesystem.hijack_netrw_behavior = "open_current"
-
--- Enable EditorConfig
-vim.g.editorconfig = true
-
-vim.g.loaded_netrw = 1
-vim.g.loaded_netrwPlugin = 1
-
+-- Leaders have to be set before plugins define their keymaps, or the mappings
+-- get bound against the old leader.
 vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
 
--- disable netrw at the very start of your init.lua
+-- Editor options still kept in Vimscript.
+vim.cmd("source " .. vim.fn.stdpath("config") .. "/config.vim")
+
+-- GUI font and line spacing (ignored by terminal Neovim).
+vim.o.guifont = "Menlo:h12:#e-subpixelantialias:#h-slight"
+vim.o.linespace = 1
+
+-- EditorConfig support is built into Neovim; no plugin needed.
+vim.g.editorconfig = true
+
+-- Disable netrw, since nvim-tree is the file explorer.
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
--- optionally enable 24-bit colour
 vim.opt.termguicolors = true

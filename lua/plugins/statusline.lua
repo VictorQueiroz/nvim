@@ -1,5 +1,9 @@
 return {
-	-- A blazing fast and easy to configure neovim statusline plugin written in pure lua.
-	-- { "nvim-lualine/lualine.nvim" },
-	{ "ojroques/nvim-hardline" },
+	-- Lightweight statusline. `main` has to be spelled out because the module is
+	-- "hardline", not "nvim-hardline"; without opts, setup() is never called.
+	{
+		"ojroques/nvim-hardline",
+		main = "hardline",
+		opts = {},
+	},
 }

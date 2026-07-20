@@ -1,4 +1,8 @@
-/backup
-/undo
-/lazy-lock.json
 /spell
+
+# lazy-lock.json is intentionally NOT ignored. It pins every plugin to a known
+# commit, which is what lets you reproduce a working setup on another machine
+# and roll back a bad :Lazy update. Commit it.
+
+# backup/ and undo/ are gone: editor scratch state now lives under
+# stdpath('state'), outside this repo. See config.vim.

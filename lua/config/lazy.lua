@@ -1,5 +1,12 @@
--- Point to Neovim virtual environment
-vim.g.python3_host_prog = os.getenv('HOME') .. '/.pyenv/versions/neovim/bin/python3'
+-- Point to the Neovim pyenv virtualenv, but only when it actually exists.
+-- Setting this unconditionally breaks the Python provider on any machine that
+-- has not built that pyenv version.
+local python3_host_prog = os.getenv('HOME') .. '/.pyenv/versions/neovim/bin/python3'
+if (vim.uv or vim.loop).fs_stat(python3_host_prog) then
+	vim.g.python3_host_prog = python3_host_prog
+else
+	vim.g.loaded_python3_provider = 0
+end
 
 -- Get absolute path of lua directory
 local lua_root_dir = vim.fn.stdpath("config") .. "/lua"
@@ -32,19 +39,14 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-local function nodejs_ensure_globally_installed_packages(packages)
-	for _, package in ipairs(packages) do
-		local is_package_installed = vim.fn.system({ 'npm', 'ls', '-g', package })
-		if vim.v.shell_error ~= 0 then
-			print("Installing " .. package .. " globally...")
-			vim.fn.system({ 'npm', 'install', '-g', package })
-		end
-	end
-end
+-- The Node provider host is not used by any plugin here, and probing for it
+-- with a blocking `npm ls -g neovim` cost ~500ms on every single launch.
+-- Run `:checkhealth provider` and `npm i -g neovim` by hand if you ever need it.
+vim.g.loaded_node_provider = 0
+vim.g.loaded_perl_provider = 0
+vim.g.loaded_ruby_provider = 0
 
-nodejs_ensure_globally_installed_packages({ "neovim" })
-
--- Example usage: load all plugin specs from the 'plugins' directory and its subdirectories
+-- Load all plugin specs from the 'plugins' directory and its subdirectories
 local plugins = recursive_load_plugins(lua_root_dir, "plugins")
 
 -- Setup lazy.nvim

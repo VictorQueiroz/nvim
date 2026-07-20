@@ -1,21 +1,18 @@
 return {
-	-- EditorConfig integration
-	{ "gpanders/editorconfig.nvim" },
+	-- "gpanders/editorconfig.nvim" was removed: it is archived upstream, and
+	-- EditorConfig support is built into Neovim (>= 0.9). It is already switched
+	-- on via `vim.g.editorconfig = true` in config/preload/00-general.lua.
 
-	-- Prettier integration
-	-- { "prettier/vim-prettier" },
-
-	-- Indent guides for Neovim
-	-- { "lukas-reineke/indent-blankline.nvim" },
-
-	-- 🧠 💪 // Smart and powerful comment plugin for neovim. Supports treesitter, dot repeat, left-right/up-down motions, hooks, and more.
+	-- Smart and powerful comment plugin. Supports treesitter, dot repeat,
+	-- left-right/up-down motions, hooks, and more.
 	{
 		"numToStr/Comment.nvim",
-		config = function()
-        require('Comment').setup()
-    end
-  },
+		opts = {},
+	},
 
-	-- Add/change/delete surrounding delimiter pairs with ease. Written with ❤️ in Lua.
-	{"kylechui/nvim-surround"},
+	-- Add/change/delete surrounding delimiter pairs with ease.
+	{
+		"kylechui/nvim-surround",
+		opts = {},
+	},
 }
